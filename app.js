@@ -84,7 +84,6 @@ app.get('/',(req,res)=>{
 app.use(process.env.AUTH_ROUTES_URL, authRouter);
 app.use(process.env.USER_ROUTES_URL, userRouter);
 
-//app.use('/user',authRouter);
 
 app.all('*',(req,res,next)=>{
 

@@ -175,3 +175,16 @@ exports.protect=asyncErrorHandler(async(req,res,next)=>{
         next();
 
 })
+
+const getUserProfileByEmail=asyncErrorHandler(async(req,res,next)=>{
+        const email=req.params.email;
+        const User=await user.findOne({email});
+        if(!User){
+                return next(new customError(`User does not exists with this email::${email}`,404));
+        }
+        res.status(200).json({
+                status:"success",
+                data:User
+        })
+})
+

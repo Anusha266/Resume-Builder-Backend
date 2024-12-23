@@ -8,4 +8,7 @@ router.get(process.env.USER_PROFILE_URL,
   userController.getUserProfile
 );
 
+router.post(process.env.USER_PROFILE_URL,
+  userController.getUserProfileByEmail
+);
 module.exports = router;
